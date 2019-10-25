@@ -1,0 +1,12 @@
+/*css styleSheet.css*/
+#ErrorCheck{
+    font-size: 57px;
+    color: red;
+}
+
+@font-face {
+    font-family: 'Noot';
+    font-weight: 400;
+    font-style: normal;
+    src: url('noot.woff') format('woff');
+}
