@@ -78,32 +78,30 @@ function setGlobal (){
         G.lastLightsign = '';
         G.lastBulletStatus = G.playerBullets;
 
-}
 
+        G.targetsHit = 0;
+        G.targetsNeedHit = 10;
+        G.pointsPerTaugmentor = 20; //20
+        G.playerBullets = G.upgrade.maxBullets;
+        G.gunloadingTime = 4000;
+        G.gunloadingChange = 0.65;
+        G.XpExponential = 1.75;
+        G.XpFirstRank = 20;
 
-game_Management: {
-
-  G.targetsHit = 0;
-  G.targetsNeedHit = 10;
-  G.pointsPerTaugmentor = 20; //20
-  G.playerBullets = G.upgrade.maxBullets;
-  G.gunloadingTime = 4000;
-  G.gunloadingChange = 0.65;
-  G.XpExponential = 1.75;
-  G.XpFirstRank = 20;
 }
 general_functions: {
 
     document.onkeydown = function(evt) {
         if (!G.devMode || !G.isPlaying) { return};
         evt = evt || window.event;
-        var isEscape = false;
+        var isPushWin = false;
+        var isPushLose = false;
         if ("key" in evt) {
-            isEscape = (evt.key == "Escape" || evt.key == "Esc");
-        } else {isEscape = (evt.keyCode == 27);}
-        if (isEscape) {
-         newLevel (true)
-        }
+            isPushWin = (evt.key == 1)
+            isPushLose = (evt.key == 2) }
+        if (isPushWin) {newLevel (true)}
+        if (isPushLose) {newLevel(true,true)}
+
         };
     function Elm(idname, type0){
         let testIt = Id(idname);
@@ -2856,10 +2854,7 @@ function newLevel (finish = false,timeup = false) {
 /* the program: */
 
 setGlobal ()
-if(storeInLocal ('check')){storeInLocal ('load') } else if (G.isClickGameSaveInLocalStore) {
-    storeInLocal ('save')
-
-}
+storeInLocal ('load')
 buildMedia();
 G.isGun2 = false; if (G.upgrade.twoGunsUpgrade[3]){G.isGun2 = true}
 visuaGamelLoader (false)
