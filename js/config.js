@@ -65,7 +65,6 @@ G = {}; // the global data object
            G.isClickGameSaveInSessionStore = false;
            return
        }
-
        if (saveFromURL && saveFromSS && (urlName === lsName) ){
            const urlTime = Number(saveFromURL.lst_) || 0
            const lsTime =  Number(saveFromSS.lst_) || 0

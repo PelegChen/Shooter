@@ -93,16 +93,18 @@ general_functions: {
 
     document.onkeydown = function(evt) {
         if (!G.devMode || !G.isPlaying) { return};
+        G.upgrade.cheat = true;
         evt = evt || window.event;
-        var isPushWin = false;
-        var isPushLose = false;
         if ("key" in evt) {
-            isPushWin = (evt.key == 1)
-            isPushLose = (evt.key == 2) }
-        if (isPushWin) {newLevel (true)}
-        if (isPushLose) {newLevel(true,true)}
-
-        };
+            switch(evt.key){
+                case '1': newLevel (true); G.upgrade.cheat = true; break;
+                case '2': newLevel(true,true); G.upgrade.cheat = true; break;
+                case '3': G.upgrade.playerPoints += (G.upgrade.pointsAugmentation * 10);
+                updatehud() ; G.upgrade.cheat = true;
+                ; break;
+            }
+        }
+    };
     function Elm(idname, type0){
         let testIt = Id(idname);
         if (Is(testIt)) return testIt;
@@ -319,15 +321,20 @@ general_functions: {
             localStorage.setItem(G.saveInLocalStorageKey, JSON.stringify(G.upgrade));
             createEvent  ('save',G.saveInLocalStorageKey , JSON.stringify(G.upgrade));
             break;
+            case 'check':
+            if (G.upgrade.nameOfplayer) {return true} else {return false}
+
+            break;
 
             case 'load':
             var retrievedObject = localStorage.getItem(G.saveInLocalStorageKey);
             if (retrievedObject) {G.upgrade = JSON.parse(retrievedObject); }
+
             break;
 
             case 'reset':
             if (G.isClickGameSaveInLocalStore) {alert ('לא ניתן לאפס משחק, נא לאפס דרך ממשק קליק'); break}
-            storage.removeItem(G.saveInLocalStorageKey)
+            localStorage.removeItem(G.saveInLocalStorageKey);
 
             break;
         }
@@ -1518,7 +1525,6 @@ function clearTargets (){
 
     setTimeout (()=>{G.IsclearBoard = false},100)
 }
-
 function moveTargets (speed = 15,hieght = 20,direction = -1) {
     if (G.IsclearBoard){return};
     const pace = 0.25 * direction; // pace = 0.25 => it's the lowest advance that can have fast pace
@@ -1577,8 +1583,6 @@ function moveTargets (speed = 15,hieght = 20,direction = -1) {
     },speed)
 
 }
-
-
 function shootSomeTarget(event){
 
 
