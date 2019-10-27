@@ -13,7 +13,16 @@ G = {}; // the global data object
    G.Fontsiztimer = 5;
    G.Fontsizstage = 4.6;
    G.FontsiznewImprov = 3
-   G.devMode = false; // developer mode => esc = endlevel
+   G.devMode = false; // developer mode => 1 = endlevel
+
+
+   G.name_of_game =  "משחק הזיכרון פעולות";
+   G.name_of_gameEN = 'Memory Game Actions';
+   G.dev_mode = 1; //change back to 0
+   G.isLanguageEnglish = 0;
+
+
+
 
 
 
