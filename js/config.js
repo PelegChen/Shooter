@@ -54,7 +54,7 @@ G = {}; // the global data object
                // default loads from css;
            }
            if (source === 'clear') {
-               localStorage.setItem(G.saveInLocalStorageKey,false)
+               localStorage.setItem(G.saveInLocalStorageKey,"")
            }
            if (source === 'url'){
                let loadedGame = JSON.parse(urlParams.get( G.saveInLocalStorageKey));

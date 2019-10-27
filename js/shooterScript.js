@@ -90,7 +90,6 @@ function setGlobal (){
         G.TXT = {};
 
 }
-
 general_functions: {
 
     document.onkeydown = function(evt) {
@@ -282,7 +281,6 @@ general_functions: {
         }
     }
     function Pre2Num (precent){
-        // this function convert precent text to number
         return Number(precent.replace("%", ''))
     }
     function getRandomInt(max) {
@@ -330,6 +328,7 @@ general_functions: {
 
             case 'load':
             var retrievedObject = localStorage.getItem(G.saveInLocalStorageKey);
+            console.log(retrievedObject)
             if (retrievedObject) {G.upgrade = JSON.parse(retrievedObject); }
 
             break;
