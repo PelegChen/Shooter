@@ -16,16 +16,10 @@ G = {}; // the global data object
    G.devMode = false; // developer mode => 1 = endlevel
 
 
-   G.name_of_game =  "משחק הזיכרון פעולות";
-   G.name_of_gameEN = 'Memory Game Actions';
+   G.name_of_game = "קליעה למטרה חיות"
+   G.name_of_gameEN = 'Shooter Animals';
    G.dev_mode = 1; //change back to 0
    G.isLanguageEnglish = 0;
-
-
-
-
-
-
 
    G.fileName = location.pathname.split("/").slice(-1)[0].replace(/\.html/ig,"")
    G.saveInLocalStorageKey = G.fileName
