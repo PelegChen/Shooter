@@ -65,7 +65,7 @@ G = {}; // the global data object
        if (!urlParams.has('api')) {
            console.log('%c no site Connection - game saved on this PC \n אין חיבור לאתר, המשחק ישמר על מחשב זה', 'font-family:david; font-size: 3vmin; background: gold; color:blue;');
            G.saveInLocalStorageKey = G.fileName + "_Local";
-           G.isClickGameSaveInSessionStore = false;
+           G.isTheGameConnectedToClick = false;
            return
        }
        if (saveFromURL && saveFromSS && (urlName === lsName) ){
@@ -83,7 +83,7 @@ G = {}; // the global data object
            G.clickFullNameOfUser = urlName;
            loadGameFrom ('clear')
        }
-       G.isClickGameSaveInSessionStore = true;
+       G.isTheGameConnectedToClick = true;
        getClicktScript (urlParams.get('api'), urlParams.toString())
    }
    activateClick ()

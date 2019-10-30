@@ -334,7 +334,7 @@ general_functions: {
             break;
 
             case 'reset':
-            if (G.isClickGameSaveInLocalStore) {alert (G.TXT.cantResteGameDoWithClicl); break}
+            if (G.isTheGameConnectedToClick) {alert (G.TXT.cantResteGameDoWithClicl); break}
             localStorage.removeItem(G.saveInLocalStorageKey);
 
             break;
@@ -385,6 +385,7 @@ function setTXT (){
             theseAre: "אלו ה",
             instructions0:  "הוראות:",
             beginLevel: "התחל שלב",
+            cantResteGameDoWithClicl : "מחובר דרך האתר. יש לאפס משחק דרך ממשק האתר."
 
 
 
@@ -2241,8 +2242,7 @@ function menu (type='settings'){
     function drawSaveSign () {
         function submitF(formArray) {
 
-
-            if (G.isClickGameSaveInLocalStore) { Formtext.innerHTML = '<span style="color:red;">' + G.TXT.connectedThroughSiteYouMustLogout + '</span>';
+            if (G.isTheGameConnectedToClick) { Formtext.innerHTML = '<span style="color:red;">' + G.TXT.connectedThroughSiteYouMustLogout + '</span>';
             return;
         }
             if (formArray === 'clear'){
@@ -2294,17 +2294,17 @@ function menu (type='settings'){
         let txt = G.TXT.ableTosave
 
 
-        if (storeInLocal ('check') || G.isClickGameSaveInLocalStore){
+        if (storeInLocal ('check') || G.isTheGameConnectedToClick){
 
         txt = G.upgrade.nameOfplayer + ', ';
         txt += G.TXT.yourProgWasSaved;
-        if (G.isClickGameSaveInLocalStore) { txt += G.TXT.onWebSite }
+        if (G.isTheGameConnectedToClick) { txt += G.TXT.onWebSite }
         }
         if (type == 'iAmNot'){
             txt = G.TXT.ifYouAreNot + '&nbsp'
             txt += G.upgrade.nameOfplayer + '&nbsp'
             txt +=  G.TXT.pressBeginNewGame
-            if (G.isClickGameSaveInLocalStore) { txt = '<span style="color:red;">' ;txt += G.TXT.connectedThroughSite + '</span>'}
+            if (G.isTheGameConnectedToClick) { txt = '<span style="color:red;">' ;txt += G.TXT.connectedThroughSite + '</span>'}
         }
         Formtext.innerHTML = txt
 
