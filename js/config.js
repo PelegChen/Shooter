@@ -2,7 +2,7 @@
 // Copyright (c) 2017-2019 Chen Peleg
 //config js with game comunication ########## english translate
 G = {}; // the global data object
-   G.guntype = '2';
+   G.guntype = '';
    G.targetHeight = 22 //in precentage 20 regular, 30 - big
    G.basicSpeedOfTargets = 14 // 14 - regular, 20 - slower,
    G.Fontsiz1 = 3.5 // current
@@ -16,10 +16,10 @@ G = {}; // the global data object
    G.devMode = false; // developer mode => 1 = endlevel
 
 
-   G.name_of_game = "קליעה למטרה חיות"
-   G.name_of_gameEN = 'Shooter Animals';
+   G.name_of_game = "קליעה למטרה בשוק"
+   G.name_of_gameEN = 'Shooter Market';
    G.dev_mode = 1; //change back to 0
-   G.isLanguageEnglish = 0;
+   G.isLanguageEnglish = 1;
 
    G.fileName = location.pathname.split("/").slice(-1)[0].replace(/\.html/ig,"")
    G.saveInLocalStorageKey = G.fileName

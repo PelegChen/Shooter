@@ -183,15 +183,17 @@ general_functions: {
           }
     }
     function iStyle (type){
-        let obj = {}
+        let obj = {} ;
+        let textDir = 'rtl';if (G.EN) {textDir = 'ltr'}
         switch (type) {
             case 'text':
+
             obj = {
                 'fontSize': G.Fontsiz1+ 'vmax',
                 'fontSize': G.Fontsiz1+ 'vmin',
                 'fontFamily':'noot',
                 'textAlign': 'right',
-                 'direction': 'rtl',
+                 'direction': textDir,
                 'color':'white',
                 'fontWeight':'bolder',
                 'textShadow': '0.1vw 0.5vh 1px black,-1px -1px 1px black,-1px 1px 1px black, 1px -1px 1px black, 9px 8px 0px rgba(0,0,0,0.15)',}
@@ -343,6 +345,56 @@ general_functions: {
 
 }
 function setTXT (){
+    if (G.EN) {
+        G.TXT = {
+
+               ableTosave :  " You can save your progress on this computer, " ,
+                yourProgWasSaved:  " Your progress is now saved " ,
+                onWebSite :  " on website " ,
+                ifYouAreNot:   " If you are not " ,
+                pressBeginNewGame :  " You can press  ‘ begin new game'  " ,
+                connectedThroughSite:  " Connected through the site " ,
+                save: " Save " ,
+                beginNewGame:  " Begin a new game " ,
+                youFinishedLevel :    " You've finish level " ,
+                timeIsUp:  " Time is up " ,
+                IAmNot:  " I am not " ,
+                tryToShootTargetsByWords :  " Shoot the targets according to the sign  " ,
+                quickDraw:  " Quick draw! " ,
+                youMustHitAt :  " Hit " ,
+                targetsBeforeTimeUp:   " targets before the time is up " ,
+                youMustHitInCorrectOrder:  " Hit all targets in the correct order " ,
+                youMustHit:  " Hit " ,
+                correctHitsInArow:  " correct hits in a streak " ,
+                cantResteGameDoWithClicl :  " Can't reset, please reset through the site interface " ,
+                rank:  " Rank " ,
+                youGainedRank :  " You've gained a new rank! New upgrqdes available " ,
+                youGainedRankAndYouHave :  " You've gained a rank and have " ,
+                existigngUpgradesAreIncolor:  " Your current upgrades are in full color: " ,
+                upgradesAvalable:   " upgrades available " ,
+                targetBank:  " Target bank " ,
+                upgrades:  " Upgrades " ,
+                theGoalOfTheGameIs:  " Your goal is to finish all the levels by shooting at the right objects. Some of the levels have a time limit. After gaining points, you can advance in rank and win upgrade options. " ,
+                savingToThisPC:  " Save to this PC " ,
+                youFinishedTheGame :  "   🏆🏆 You've finished the game! 🏆🏆  " ,
+                youCanStartAnewGame:   " You can start a new game by: save to this pc -> start a new game. " ,
+                youCanContinueButItsHard:  " You can also continue playing but the levels would be harder " ,
+                connectedThroughSiteYouMustLogout:  " Connected through the site. Please reset using the site interface. " ,
+                nameMustHave2chars:  " Name has to  " ,
+                fromNowtourProgWillBeSaved :  " From now on, your game progress would be saved. " ,
+                saveWasNotFoundRefreshThewindow :  " No saved game was found. You can start a new game by refreshing the tab. " ,
+                doYouWantToDeleteAndStartNew:   " Are you sure you want to delete all progress and start a new game? " ,
+                theseAre:  " These are " ,
+                instructions0:   " Instruction: " ,
+                beginLevel:  " Begin level  " ,
+
+
+
+
+
+        }
+        return
+    }
     G.TXT = {
 /////
             ableTosave : "ניתן לשמור את ההתקדמות על המחשב הזה",
@@ -397,6 +449,8 @@ function setTXT (){
 
 
     }
+
+
 
 }
 function buildMedia() {
@@ -564,10 +618,16 @@ function buildMedia() {
     }
     function buildHud () {
         G.ranksArry = ['','מתחיל','חובבן','טוראי', 'שולף', 'מקצוען', 'אקדוחן', 'קלע','שריף','צלף','אלוף','גנרל']
+        if (G.EN){
+            G.ranksArry = ['Beginer', 'Amateur', 'Private', 'Slinger', 'Professional','Gunner', 'Marksman','Sheriff', 'Sharpshooter', 'Sniper' , 'Champion']
+        }
         G.Numbersfont = "noot" //noot
         let hud = document.createElement("div");
-        let stagePhoto = document.createElement("img");stagePhoto.src = "data/stage.png"; stagePhoto.id = 'stagePhoto';
-        let pointPhoto = document.createElement("img"); pointPhoto.src = "data/points.png";
+        let pointsSrc = "data/points.png"; let stageSrc =  "data/stage.png";
+        if (G.EN){pointsSrc = "data/pointsEN.png" ; stageSrc =  "data/stageEN.png";}
+        let stagePhoto = document.createElement("img");stagePhoto.src = stageSrc; stagePhoto.id = 'stagePhoto';
+
+        let pointPhoto = document.createElement("img"); pointPhoto.src = pointsSrc;
         pointPhoto.id = 'pointPhoto';
         let bullets = document.createElement("div");bullets.id = 'bullets';
         let points = document.createElement('div'); points.id = "points";
@@ -2035,8 +2095,10 @@ function menu (type='settings'){
         }
         function writeLightsign(){
             return;
-            lightsign = Id ('lightsign')
+            lightsign = Id ('lightsign');
+            let textDir = 'rtl'; if (G.EN){textDir = 'ltr'}
             deleteChildren (lightsign);
+
             let textsign = document.createElement('div'); textsign.id = 'textsign';
             stl(textsign, {
                 'position': 'absolute',
@@ -2049,7 +2111,7 @@ function menu (type='settings'){
                 'fontSize': G.Fontsiz1+ 'vmin',
                 'fontFamily':'noot',
                 'textAlign': 'right',
-                 'direction': 'rtl',
+                 'direction': textDir,
                 'color':'white',
                 'fontWeight':'bolder',
                 'textShadow': '0.1vw 0.5vh 1px black,-1px -1px 1px black,-1px 1px 1px black, 1px -1px 1px black, 9px 8px 0px rgba(0,0,0,0.15)',
@@ -2240,6 +2302,7 @@ function menu (type='settings'){
 
     }
     function drawSaveSign () {
+        let textDir = 'rtl';if (G.EN) {textDir = 'ltr'}
         function submitF(formArray) {
 
             if (G.isTheGameConnectedToClick) { Formtext.innerHTML = '<span style="color:red;">' + G.TXT.connectedThroughSiteYouMustLogout + '</span>';
@@ -2271,7 +2334,7 @@ function menu (type='settings'){
             'fontSize':'3vmax',
             'fontFamily':'noot',
             'textAlign': 'center',
-            'direction': 'rtl',
+            'direction': textDir,
             'fontWeight':'bolder',
             'backgroundColor': 'rgba(253,253,253, 0.3)',
             'borderRadius':'14px',
