@@ -184,7 +184,7 @@ general_functions: {
     }
     function iStyle (type){
         let obj = {} ;
-        let textDir = 'rtl';if (G.EN) {textDir = 'ltr'}
+        let textDir = 'rtl'; let alignTxt = 'right';if (G.EN) {textDir = 'ltr'; alignTxt = 'left'}
         switch (type) {
             case 'text':
 
@@ -192,7 +192,7 @@ general_functions: {
                 'fontSize': G.Fontsiz1+ 'vmax',
                 'fontSize': G.Fontsiz1+ 'vmin',
                 'fontFamily':'noot',
-                'textAlign': 'right',
+                'textAlign': alignTxt,
                  'direction': textDir,
                 'color':'white',
                 'fontWeight':'bolder',
@@ -633,10 +633,10 @@ function buildMedia() {
         let points = document.createElement('div'); points.id = "points";
         let stage = document.createElement('div'); stage.id = "stage";
         let rank = document.createElement('div'); rank.id = "rank";
-
+        let textDir = 'rtl'; let alignTxt = 'right';if (G.EN) {textDir = 'ltr'; alignTxt = 'left'}
         stl (rank, {
             'position':'fixed',
-            'textAlign': 'right',
+            'textAlign': alignTxt,
             'verticalAlign':'baseline',
             'top':'15.5%',
             'right': '67.7%',
@@ -696,6 +696,7 @@ function buildMedia() {
             "padding":"0.0%", "backgroundSize" : "100%",
             "zIndex":'9'
         })
+
         stl (stage, {
             'position':'fixed',
             'fontSize': G.Fontsizstage,
@@ -1492,9 +1493,10 @@ function updatehud (dontCheckTheScore = false){
 
       if (!Id("newUpgrades")) {
         let newUpgrades = document.createElement('div'); newUpgrades.id = "newUpgrades";
+        let textDir = 'rtl'; let alignTxt = 'right';if (G.EN) {textDir = 'ltr'; alignTxt = 'left'}
         stl (newUpgrades, {
             'position':'fixed',
-            'textAlign': 'right',
+            'textAlign': alignTxt,
             'verticalAlign':'baseline',
             'top':'13.5%',
             'right': '12.7%',
@@ -2096,7 +2098,7 @@ function menu (type='settings'){
         function writeLightsign(){
             return;
             lightsign = Id ('lightsign');
-            let textDir = 'rtl'; if (G.EN){textDir = 'ltr'}
+            let textDir = 'rtl'; let alignTxt = 'right';if (G.EN) {textDir = 'ltr'; alignTxt = 'left'}
             deleteChildren (lightsign);
 
             let textsign = document.createElement('div'); textsign.id = 'textsign';
@@ -2110,7 +2112,7 @@ function menu (type='settings'){
                 'fontSize': G.Fontsiz1+ 'vmax',
                 'fontSize': G.Fontsiz1+ 'vmin',
                 'fontFamily':'noot',
-                'textAlign': 'right',
+                'textAlign': textAlign,
                  'direction': textDir,
                 'color':'white',
                 'fontWeight':'bolder',
@@ -2148,7 +2150,8 @@ function menu (type='settings'){
                 let bonus = document.createElement('div');bonus.id = 'bonus'+bnsNum
                 let dx = (x * (ratio + morex)) + 10  ;
                 let dy = (y * ratio ) + 12 ;
-                let theUrl = file + bnsNum + ".png')"
+                let isEng = ''; if (G.EN) {isEng = "EN"}
+                let theUrl = file + bnsNum + isEng + ".png')"
                 stl(bonus, {'position': 'absolute',
                     'right': dx  +'%',
                     'top': dy + "%",
