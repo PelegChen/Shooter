@@ -2408,13 +2408,16 @@ function menu (type='settings'){
         if (type !== 'back2menu'){
             let wood = Id("woodsign");
             let back2game = document.createElement('div');back2game.id = 'back2game';
+            let backSing = "url('data/back2game.png')"; if (G.EN) {
+                backSing = "url('data/back2gameEN.png')"
+            }
             stl(back2game, {'position': 'absolute',
                 'right': '45%',
                 'top': "57%",
                 'overflow': 'hidden',
                 'height': (6 + "%"),
                 'width': (17 +  "%"),
-                'background': "url('data/back2game.png')",
+                'background': backSing,
                 'backgroundColor': 'rgba(253,253,253,0.2)',
                 'borderRadius' : "20px",
                 "backgroundSize": "100%",
