@@ -1,7 +1,19 @@
 /*css styleSheet.css*/
-#ErrorCheck{
+
+#ErrorCheck {
     font-size: 57px;
     color: red;
+}
+
+#gamesign {
+    position: absolute;
+    top: 15%;
+    left: 11%;
+    height: 60%;
+    width: 78%;
+    background-size: 100%;
+    z-index: 13;
+    background-repeat: no-repeat;
 }
 
 @font-face {
@@ -9,4 +21,16 @@
     font-weight: 400;
     font-style: normal;
     src: url('noot.woff') format('woff');
+}
+
+@media (max-width: 767px) {
+    html {
+        transform: rotate(-90deg);
+        transform-origin: left top;
+        width: 100vh;
+        height: 100vw;
+        position: fixed;
+        top: 100%;
+        left: 0;
+    }
 }
