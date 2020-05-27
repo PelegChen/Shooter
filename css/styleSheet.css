@@ -1,0 +1,141 @@
+/*css styleSheet.css*/
+
+#ErrorCheck {
+    font-size: 57px;
+    color: red;
+}
+
+#wood {
+    position: fixed;
+    top: 16%;
+    right: 12%;
+    left: 12%;
+    height: 60%;
+    width: 74%;
+    background: url(../data/wood.jpg) 0% 0% / 100%;
+    background-repeat: repeat-y;
+    overflow: hidden;
+    filter: blur(1px);
+    z-index: 3;
+}
+
+#pageBody {
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    height: 100%;
+    width: 100%;
+    background: url(../data/back01.jpg) 0% 0% / 100% no-repeat;
+    background-size: cover;
+    filter: blur(1px);
+    z-index: 0;
+}
+
+#pagecontainer {
+    position: absolute;
+    height: 100%;
+    width: 99%;
+    overflow: hidden;
+}
+
+#plaque {
+    position: fixed;
+    bottom: 72%;
+    left: 8%;
+    height: 23vw;
+    width: 84%;
+    background: url(../data/plaque.png ) 0% 0% / 100% no-repeat;
+    z-index: 11;
+}
+
+#leftpole {
+    position: fixed;
+    top: 13%;
+    left: 10%;
+    height: 100%;
+    width: 10%;
+    background: url(../data/side_pole.png) 0% 0% / 90%;
+    background-repeat: repeat-y;
+    z-index: 10;
+}
+
+#rightpole {
+    position: fixed;
+    top: 13%;
+    right: 10%;
+    height: 100%;
+    width: 10%;
+    background: url(../data/side_pole.png) 0% 0% / 90%;
+    background-repeat: repeat-y;
+    z-index: 10;
+    transform: scaleX(-1);
+}
+
+#leftcurtain {
+    position: absolute;
+    top: 17%;
+    left: -15%;
+    height: 80%;
+    width: 70%;
+    background: url(../data/curtain.png) 0% 0% / 100% no-repeat;
+    overflow: hidden;
+    z-index: 10;
+}
+
+#rightcurtain {
+    position: absolute;
+    top: 17%;
+    left: 30%;
+    height: 80%;
+    width: 70%;
+    background: url(../data/curtain.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    z-index: 10;
+    transform: scaleX(-1);
+}
+
+#lightsign {
+    position: fixed;
+    bottom: 72%;
+    left: 35%;
+    height: 15vw;
+    width: 30%;
+    background: url(../data/light_sign.png) 0% 0% / 100% no-repeat;
+    z-index: 12;
+}
+
+#gamesign {
+    position: absolute;
+    top: 15%;
+    left: 11%;
+    height: 60%;
+    width: 78%;
+    background-size: 100%;
+    z-index: 13;
+    background-repeat: no-repeat;
+}
+
+@font-face {
+    font-family: 'Noot';
+    font-weight: 400;
+    font-style: normal;
+    src: url('../data/noot.woff') format('woff');
+}
+
+@media (max-width: 767px) {
+    html {
+        transform: rotate(-90deg);
+        transform-origin: left top;
+        width: 100vh;
+        height: 100vw;
+        position: fixed;
+        top: 100%;
+        left: 0;
+    }
+    #lightsign {
+        bottom: 72%;
+        height: 28vw;
+    }
+}
