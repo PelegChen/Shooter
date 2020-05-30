@@ -891,26 +891,10 @@ function buildMedia() {
     var drone = Id("ErrorCheck");
     drone.innerHTML = "";
     var pagebackground = Id("pageBody");
-    // stl(pagebackground, {
-    //     'position': 'fixed',
-    //     'top': "0%",
-    //     "left": "0%",
-    //     'height': "100%",
-    //     'width': "100%",
-    //     'background': "url('data/back01.jpg')",
-    //     'filter': "blur(1px)",
-    //     "zIndex": "0",
-    //     "backgroundSize": "100%",
-    //     "backgroundRepeat": "no-repeat"
-    // });
+
     var pagecontainer = document.createElement("div");
     pagecontainer.id = "pagecontainer";
-    // stl(pagebackground, {
-    //     'position': 'fixed',
-    //     'height': "100%",
-    //     'width': "100%",
-    //     "zIndex": "1"
-    // });
+
     document.body.appendChild(pagecontainer);
     var galleryContainer = document.createElement("div");
     galleryContainer.id = "galleryContainer";
@@ -1024,17 +1008,17 @@ function buildMedia() {
     //     "zIndex": "12",
     //     "backgroundRepeat": "no-repeat",
     // });
-    stl(bottomgallery, {
-        'position': 'fixed',
-        "bottom": "0%",
-        "left": gallery_sideposition,
-        'height': "30%",
-        'width': (100 - (Pre2Num(gallery_sideposition) * 2)) + "%",
-        'background': "url('data/bottomgallery.png')",
-        "backgroundSize": "100%",
-        "zIndex": "3",
-        "backgroundRepeat": "no-repeat",
-    });
+    // stl(bottomgallery, {
+    //     'position': 'fixed',
+    //     "bottom": "0%",
+    //     "left": gallery_sideposition,
+    //     'height': "30%",
+    //     'width': (100 - (Pre2Num(gallery_sideposition) * 2)) + "%",
+    //     'background': "url('data/bottomgallery.png')",
+    //     "backgroundSize": "100%",
+    //     "zIndex": "3",
+    //     "backgroundRepeat": "no-repeat",
+    // });
     stl(botoom_of_sign, {
         'position': 'fixed',
         "bottom": "72%",
@@ -2862,18 +2846,18 @@ function moveCurtain(action = 'open') {
             woodsign.id = 'woodsign'
             let woodsigncontainer = document.createElement("div");
             woodsigncontainer.id = 'woodsigncontainer'
-            stl(woodsign, {
-                'position': 'fixed',
-                "bottom": "-20vh",
-                "left": (Pre2Num(gallery_sideposition) - 2) + 4.3 + "%",
-                'height': "60vw", //50%
-                'width': (104 - (Pre2Num(gallery_sideposition) * 2)) + "%",
-                //'background': "url('data/woodsign.png')",
-                "backgroundSize": "90%",
-                "zIndex": "12",
-                "backgroundRepeat": "no-repeat",
-                'opacity': 'inherit'
-            });
+                // stl(woodsign, {
+                //     'position': 'fixed',
+                //     "bottom": "-20vh",
+                //     "left": (Pre2Num(gallery_sideposition) - 2) + 4.3 + "%",
+                //     'height': "60vw", //50%
+                //     'width': (104 - (Pre2Num(gallery_sideposition) * 2)) + "%",
+                //     //'background': "url('data/woodsign.png')",
+                //     "backgroundSize": "90%",
+                //     "zIndex": "12",
+                //     "backgroundRepeat": "no-repeat",
+                //     'opacity': 'inherit'
+                // });
             stl(woodsigncontainer, {
                 'position': 'fixed',
                 "bottom": "-27vh",

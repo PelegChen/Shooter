@@ -5,6 +5,42 @@
     color: red;
 }
 
+#bottomgallery {
+    position: fixed;
+    bottom: 0%;
+    left: 10%;
+    height: 30%;
+    width: 80%;
+    background: url(../data/bottomgallery.png ) 0% 0% / 100%;
+    background-repeat: repeat-y;
+    z-index: 3;
+}
+
+.onBoard,
+.offBoard {
+    display: inherit;
+    position: absolute;
+    overflow: hidden;
+    height: 22%;
+    width: 16.3562%;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    opacity: 1;
+    z-index: 9;
+}
+
+#woodsign {
+    position: fixed;
+    bottom: -20vh;
+    left: 12.3%;
+    height: 60vw;
+    width: 84%;
+    background-size: 90%;
+    z-index: 12;
+    background-repeat: no-repeat;
+    opacity: inherit;
+}
+
 #wood {
     position: fixed;
     top: 16%;
