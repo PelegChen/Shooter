@@ -1079,56 +1079,56 @@ function buildMedia() {
 
     let buttonsUI = document.createElement('div');
     buttonsUI.id = 'buttonsUI';
-    stl(buttonsUI, {
-        'position': 'absolute',
-        'top': '8%',
-        'right': '3%',
-        'height': '80%',
-        'width': '30%',
-        'scr': '',
-        "zIndex": '4'
-    });;
+    // stl(buttonsUI, {
+    //     'position': 'absolute',
+    //     'top': '8%',
+    //     'right': '3%',
+    //     'height': '80%',
+    //     'width': '30%',
+    //     'scr': '',
+    //     "zIndex": '4'
+    // });;
     Id("plaque").appendChild(buttonsUI);
     let volumeButton = document.createElement('img');
     volumeButton.src = "data/volumeon.png";
     volumeButton.id = "volumeButton";
-    stl(volumeButton, {
-        'position': 'absolute',
-        'top': '50%',
-        'left': '70%',
-        'height': '25%',
-        "zIndex": '24'
-    });
+    // stl(volumeButton, {
+    //     'position': 'absolute',
+    //     'top': '50%',
+    //     'left': '70%',
+    //     'height': '25%',
+    //     "zIndex": '24'
+    // });
     volumeButton.addEventListener('click', toggleSound);
     buttonsUI.appendChild(volumeButton);
     let pauseButton = document.createElement('img');
     pauseButton.src = "data/pause.png";
     pauseButton.id = "pauseButton";
-    stl(pauseButton, {
-        'position': 'fixed',
-        'top': '2.2%',
-        'left': '76%',
-        'height': '9.5%',
-        "zIndex": '24'
-    });
+    // stl(pauseButton, {
+    //     'position': 'fixed',
+    //     'top': '2.2%',
+    //     'left': '76%',
+    //     'height': '9.5%',
+    //     "zIndex": '24'
+    // });
     pauseButton.addEventListener('click', togglePause);
-    document.body.appendChild(pauseButton);
+    buttonsUI.appendChild(pauseButton);
     let timer = document.createElement('div');
     timer.id = "timer";
-    stl(timer, {
-        'position': 'absolute',
-        'top': '53%',
-        'height': '22%',
-        'width': '30%',
-        'fontSize': G.Fontsiztimer + 'vmax',
-        'fontSize': G.Fontsiztimer + 'vmin',
-        'fontFamily': 'noot',
-        'left': '8%',
-        'color': 'white',
-        'fontWeight': 'bolder',
-        'textShadow': '0.5vw 0.5vh 1px black,-1px -1px 1px black,-1px 1px 1px black, 1px -1px 1px black, 9px 8px 0px rgba(0,0,0,0.15)'
+    // stl(timer, {
+    //     'position': 'absolute',
+    //     'top': '53%',
+    //     'height': '22%',
+    //     'width': '30%',
+    //     'fontSize': G.Fontsiztimer + 'vmax',
+    //     'fontSize': G.Fontsiztimer + 'vmin',
+    //     'fontFamily': 'noot',
+    //     'left': '8%',
+    //     'color': 'white',
+    //     'fontWeight': 'bolder',
+    //     'textShadow': '0.5vw 0.5vh 1px black,-1px -1px 1px black,-1px 1px 1px black, 1px -1px 1px black, 9px 8px 0px rgba(0,0,0,0.15)'
 
-    });
+    // });
 
     buttonsUI.appendChild(timer);
     bulildwords();
