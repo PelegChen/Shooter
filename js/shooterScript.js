@@ -1037,7 +1037,7 @@ function buildMedia() {
     galleryContainer.appendChild(rightpole);
 
     galleryContainer.appendChild(plaque);
-    galleryContainer.appendChild(lightsign);
+    plaque.appendChild(lightsign);
     galleryContainer.appendChild(botoom_of_sign);
     pagecontainer.appendChild(galleryContainer);
     var wood = document.createElement("div");
