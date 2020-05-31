@@ -30,6 +30,18 @@
     z-index: 24;
 }
 
+#galleryContainer {
+    position: fixed;
+    display: inline-block;
+    right: 10%;
+    left: 10%;
+    height: 100%;
+    width: 80%;
+    overflow: hidden;
+    z-index: 1;
+    cursor: url("data/crosshair.png"), auto;
+}
+
 #timer {
     position: absolute;
     top: 53%;
@@ -37,7 +49,7 @@
     width: 30%;
     font-size: 5vmin;
     font-family: noot;
-    left: 8%;
+    right: 8%;
     color: white;
     font-weight: bolder;
     text-shadow: black 0.5vw 0.5vh 1px, black -1px -1px 1px, black -1px 1px 1px, black 1px -1px 1px, rgba(0, 0, 0, 0.15) 9px 8px 0px;
@@ -116,10 +128,12 @@
     position: fixed;
     bottom: 72%;
     left: 8%;
-    height: 23vw;
+    height: 30vh;
     width: 84%;
     background: url(../data/plaque.png ) 0% 0% / 100% no-repeat;
     z-index: 11;
+    background-position: center bottom;
+    background-size: cover;
 }
 
 #leftpole {
@@ -172,7 +186,7 @@
 
 #lightsign {
     position: fixed;
-    bottom: 72%;
+    top: 0%;
     left: 35%;
     height: 15vw;
     width: 30%;

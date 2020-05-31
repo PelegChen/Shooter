@@ -905,16 +905,16 @@ function buildMedia() {
         'overflow': 'hidden',
 
     });
-    stl(galleryContainer, {
-        'position': 'fixed',
-        'display': 'inline-block',
-        'right': gallery_sideposition,
-        "left": gallery_sideposition,
-        'height': "100%",
-        'width': "80%",
-        'overflow': 'hidden',
-        "zIndex": "1"
-    });
+    // stl(galleryContainer, {
+    //     'position': 'fixed',
+    //     'display': 'inline-block',
+    //     'right': gallery_sideposition,
+    //     "left": gallery_sideposition,
+    //     'height': "100%",
+    //     'width': "80%",
+    //     'overflow': 'hidden',
+    //     "zIndex": "1"
+    // });
     stl(galleryContainer, {
         'cursor': "url('data/crosshair.png'), auto"
 
