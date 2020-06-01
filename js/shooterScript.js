@@ -708,7 +708,10 @@ function buildMedia() {
         points.id = "points";
         let stage = document.createElement('div');
         stage.id = "stage";
+
         let rank = document.createElement('div');
+        stage.classList.add("console-text")
+        rank.classList.add("console-text")
         rank.id = "rank";
         let textDir = 'rtl';
         let alignTxt = 'right';
@@ -716,26 +719,26 @@ function buildMedia() {
             textDir = 'ltr';
             alignTxt = 'left'
         }
-        stl(rank, {
-            'position': 'fixed',
-            'textAlign': alignTxt,
-            'verticalAlign': 'baseline',
-            'top': '15.5%',
-            'right': '67.7%',
-            'height': '4%',
-            'width': '20%',
-            "zIndex": '6',
-            'fontFamily': 'noot',
-            'color': 'white',
-            'fontWeight': 'bolder',
-            'position': 'fixed',
-            'width': '20%',
-            'height': '10%',
-            'fontSize': G.Fontsiz3 + 'vmax',
-            'fontSize': G.Fontsiz3 + 'vmin',
-            'textShadow': '0.5vw 0.5vh 1px black,-1px -1px 1px black,-1px 1px 1px black, 1px -1px 1px black, 9px 8px 0px rgba(0,0,0,0.15)'
+        // stl(rank, {
+        //     'position': 'fixed',
+        //     'textAlign': alignTxt,
+        //     'verticalAlign': 'baseline',
+        //     'top': '15.5%',
+        //     'right': '67.7%',
+        //     'height': '4%',
+        //     'width': '20%',
+        //     "zIndex": '6',
+        //     'fontFamily': 'noot',
+        //     'color': 'white',
+        //     'fontWeight': 'bolder',
+        //     'position': 'fixed',
+        //     'width': '20%',
+        //     'height': '10%',
+        //     'fontSize': G.Fontsiz3 + 'vmax',
+        //     'fontSize': G.Fontsiz3 + 'vmin',
+        //     'textShadow': '0.5vw 0.5vh 1px black,-1px -1px 1px black,-1px 1px 1px black, 1px -1px 1px black, 9px 8px 0px rgba(0,0,0,0.15)'
 
-        })
+        // })
         stl(stagePhoto, {
             'position': 'fixed',
             'top': '9%',
@@ -783,19 +786,19 @@ function buildMedia() {
             "zIndex": '9'
         })
 
-        stl(stage, {
-            'position': 'fixed',
-            'fontSize': G.Fontsizstage,
-            'fontWeight': 'bold',
-            'fontFamily': 'noot',
-            'textAlign': 'left',
-            'verticalAlign': 'baseline',
-            'top': '9%',
-            'left': '25.5%',
-            'height': '6%',
-            'width': '6%',
-            "zIndex": '6',
-        })
+        // stl(stage, {
+        //     'position': 'fixed',
+        //     'fontSize': G.Fontsizstage,
+        //     'fontWeight': 'bold',
+        //     'fontFamily': 'noot',
+        //     'textAlign': 'left',
+        //     'verticalAlign': 'baseline',
+        //     'top': '9%',
+        //     'left': '25.5%',
+        //     'height': '6%',
+        //     'width': '6%',
+        //     "zIndex": '6',
+        // })
         stl(bullets, {
             'position': 'fixed',
             'fontSize': '210%',
@@ -842,19 +845,20 @@ function buildMedia() {
         //points G.upgrade.playerPoints
         stagetxt = document.createElement("text");
         stagetxt.id = "stagetxt";
+        stagetxt.classList.add("console-text")
         stagetxt.innerHTML = G.upgrade.playerLevel;
-        stl(stagetxt, {
-            'fontFamily': 'noot',
-            'color': 'white',
-            'fontWeight': 'bolder',
-            'position': 'fixed',
-            'width': '20%',
-            'height': '20%',
-            'fontSize': G.Fontsizstage + 'vmax',
-            'fontSize': G.Fontsizstage + 'vmin',
-            'textShadow': '0.5vw 0.5vh 1px black,-1px -1px 1px black,-1px 1px 1px black, 1px -1px 1px black, 9px 8px 0px rgba(0,0,0,0.15)'
+        // stl(stagetxt, {
+        //     'fontFamily': 'noot',
+        //     'color': 'white',
+        //     'fontWeight': 'bolder',
+        //     'position': 'fixed',
+        //     'width': '20%',
+        //     'height': '20%',
+        //     'fontSize': G.Fontsizstage + 'vmax',
+        //     'fontSize': G.Fontsizstage + 'vmin',
+        //     'textShadow': '0.5vw 0.5vh 1px black,-1px -1px 1px black,-1px 1px 1px black, 1px -1px 1px black, 9px 8px 0px rgba(0,0,0,0.15)'
 
-        })
+        // })
         stage.appendChild(stagetxt);
 
         G.bulletDistance = 9;
@@ -1804,8 +1808,8 @@ function moveCurtain(action = 'open') {
             'bottom': (y + "%"),
             'transform': 'scaleX(' + direction + ')', // transform image
             'overflow': 'hidden',
-            'height': (G.targetHeight + "%"),
-            'width': ((G.targetHeight * widthRatio) + "%"), //curren set proper width ratio
+            // 'height': (G.targetHeight + "%"),
+            // 'width': ((G.targetHeight * widthRatio) + "%"), //curren set proper width ratio
             "backgroundSize": "100%",
             "backgroundRepeat": "no-repeat",
             'opacity': '1',
@@ -2858,18 +2862,18 @@ function moveCurtain(action = 'open') {
                 //     "backgroundRepeat": "no-repeat",
                 //     'opacity': 'inherit'
                 // });
-            stl(woodsigncontainer, {
-                'position': 'fixed',
-                "bottom": "-27vh",
-                "left": (Pre2Num(gallery_sideposition) - 2) + 4.3 + "%",
-                'height': "60vw", //50%
-                'width': (104 - (Pre2Num(gallery_sideposition) * 2)) + "%",
-                'background': "url('data/woodsign.png')",
-                "backgroundSize": "90%",
-                "zIndex": "33",
-                "backgroundRepeat": "no-repeat",
-                'opacity': op
-            });
+                // stl(woodsigncontainer, {
+                //     'position': 'fixed',
+                //     "bottom": "-27vh",
+                //     "left": (Pre2Num(gallery_sideposition) - 2) + 4.3 + "%",
+                //     'height': "60vw", //50%
+                //     'width': (104 - (Pre2Num(gallery_sideposition) * 2)) + "%",
+                //     'background': "url('data/woodsign.png')",
+                //     "backgroundSize": "90%",
+                //     "zIndex": "33",
+                //     "backgroundRepeat": "no-repeat",
+                //     'opacity': op
+                // });
             Id('galleryContainer').appendChild(woodsigncontainer); //current - targetcontainer
             Id('woodsigncontainer').appendChild(woodsign);
         }
