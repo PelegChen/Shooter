@@ -2520,56 +2520,56 @@ function moveCurtain(action = 'open') {
 
 
 
-            stl(jump2save, txtstyle, {
-                'position': 'absolute',
-                'right': '45%',
-                'top': "40%",
-                'height': (13 + "%"),
-                'width': (13 + "%"),
-                'background': 'url("data/loadcursor2.png")',
-                'backgroundRepeat': 'no-repeat',
-                'backgroundSize': '40%',
-                'textAlign': 'center',
-            })
-            stl(jump2banks, {
-                'position': 'absolute',
-                'right': '27%',
-                'top': "40%",
-                'height': (13 + "%"),
-                'width': (13 + "%"),
-                'textAlign': 'center',
-                'backgroundColor': 'rgba(253,253,253,0.8)',
-                'borderRadius': "20px",
-                'background': 'url("targets1/target (1).png")',
-                "backgroundSize": "100%",
-            }, txtstyle);
-            stl(jump2upgrad, {
-                'position': 'absolute',
-                'right': '70%',
-                'top': "40%",
-                'height': (13 + "%"),
-                'width': (13 + "%"),
-                'textAlign': 'center',
-                'backgroundColor': 'rgba(253,253,253,0.8)',
-                'borderRadius': "20px",
-                'background': 'url("data/gun' + G.guntype + '.png")',
-                "backgroundSize": "100%",
-            }, txtstyle);
-            stl(instructions, {
-                'position': 'absolute',
-                'right': '25%',
-                'top': "22%",
-                'height': (13 + "%"),
-                'width': (60 + "%"),
-                'backgroundColor': 'rgba(253,253,253,0.05)',
-                'borderRadius': "20px",
-                "backgroundSize": "100%",
-                'overflow': 'hidden',
-                "backgroundRepeat": "no-repeat",
-                'opacity': '1',
-                "zIndex": "9"
-            })
-            stl(instructions, txtstyle);
+            // stl(jump2save, txtstyle, {
+            //         'position': 'absolute',
+            //         'right': '45%',
+            //         'top': "40%",
+            //         'height': (13 + "%"),
+            //         'width': (13 + "%"),
+            //         'background': 'url("data/loadcursor2.png")',
+            //         'backgroundRepeat': 'no-repeat',
+            //         'backgroundSize': '40%',
+            //         'textAlign': 'center',
+            //     })
+            // stl(jump2banks, {
+            //     'position': 'absolute',
+            //     'right': '27%',
+            //     'top': "40%",
+            //     'height': (13 + "%"),
+            //     'width': (13 + "%"),
+            //     'textAlign': 'center',
+            //     'backgroundColor': 'rgba(253,253,253,0.8)',
+            //     'borderRadius': "20px",
+            //     'background': 'url("targets1/target (1).png")',
+            //     "backgroundSize": "100%",
+            // }, txtstyle);
+            // stl(jump2upgrad, {
+            //     'position': 'absolute',
+            //     'right': '70%',
+            //     'top': "40%",
+            //     'height': (13 + "%"),
+            //     'width': (13 + "%"),
+            //     'textAlign': 'center',
+            //     'backgroundColor': 'rgba(253,253,253,0.8)',
+            //     'borderRadius': "20px",
+            //     'background': 'url("data/gun' + G.guntype + '.png")',
+            //     "backgroundSize": "100%",
+            // }, txtstyle);
+            // stl(instructions, {
+            //     'position': 'absolute',
+            //     'right': '25%',
+            //     'top': "22%",
+            //     'height': (13 + "%"),
+            //     'width': (60 + "%"),
+            //     'backgroundColor': 'rgba(253,253,253,0.05)',
+            //     'borderRadius': "20px",
+            //     "backgroundSize": "100%",
+            //     'overflow': 'hidden',
+            //     "backgroundRepeat": "no-repeat",
+            //     'opacity': '1',
+            //     "zIndex": "9"
+            // })
+            // stl(instructions, txtstyle);
 
 
             let targetTxt = G.TXT.targetBank;
@@ -2724,21 +2724,21 @@ function moveCurtain(action = 'open') {
                 if (G.EN) {
                     backSing = "url('data/back2gameEN.png')"
                 }
-                stl(back2game, {
-                    'position': 'absolute',
-                    'right': '45%',
-                    'top': "57%",
-                    'overflow': 'hidden',
-                    'height': (6 + "%"),
-                    'width': (17 + "%"),
-                    'background': backSing,
-                    'backgroundColor': 'rgba(253,253,253,0.2)',
-                    'borderRadius': "20px",
-                    "backgroundSize": "100%",
-                    "backgroundRepeat": "no-repeat",
-                    'opacity': '1',
-                    "zIndex": "9"
-                })
+                // stl(back2game, {
+                //     'position': 'absolute',
+                //     'right': '45%',
+                //     'top': "57%",
+                //     'overflow': 'hidden',
+                //     'height': (6 + "%"),
+                //     'width': (17 + "%"),
+                //     'background': backSing,
+                //     'backgroundColor': 'rgba(253,253,253,0.2)',
+                //     'borderRadius': "20px",
+                //     "backgroundSize": "100%",
+                //     "backgroundRepeat": "no-repeat",
+                //     'opacity': '1',
+                //     "zIndex": "9"
+                // })
                 mOverEffect(back2game, 1.5, 10);
                 wood.appendChild(back2game);
 
@@ -3198,30 +3198,30 @@ function moveCurtain(action = 'open') {
                     break;
             }
             stl(areYouHim, iStyle('text'), {
-                'position': 'fixed',
-                'left': '34%',
-                'top': '71%',
-                'textAlign': 'center',
-                'height': '10%',
-                'width': '30%',
-                'fontSize': '3vmin',
-                'opacity': '1',
-                'backgroundColor': 'rgba (240,240,240, 0.9)',
-                'zIndex': '20',
+                    'position': 'fixed',
+                    'left': '34%',
+                    'top': '71%',
+                    'textAlign': 'center',
+                    'height': '10%',
+                    'width': '30%',
+                    'fontSize': '3vmin',
+                    'opacity': '1',
+                    'backgroundColor': 'rgba (240,240,240, 0.9)',
+                    'zIndex': '20',
 
-            })
-            stl(stageinfo, iStyle('text'), {
-                'position': 'fixed',
-                'left': '30%',
-                'top': '30%',
-                'height': '20%',
-                'width': '30%',
-                'fontSize': G.Fontsiz1 + 'vmin',
-                'opacity': '0',
-                'backgroundColor': 'rgba (240,240,240, 0.6)',
-                'zIndex': '20',
+                })
+                // stl(stageinfo, iStyle('text'), {
+                //     'position': 'fixed',
+                //     'left': '30%',
+                //     'top': '30%',
+                //     'height': '20%',
+                //     'width': '30%',
+                //     'fontSize': G.Fontsiz1 + 'vmin',
+                //     'opacity': '0',
+                //     'backgroundColor': 'rgba (240,240,240, 0.6)',
+                //     'zIndex': '20',
 
-            })
+            // })
             stl(startbutton, iStyle('text'), {
                 'position': 'fixed',
                 //'textAlign': 'center',

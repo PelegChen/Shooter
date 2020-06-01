@@ -97,12 +97,14 @@
 }
 
 #woodsign {
-    position: fixed;
-    bottom: -20vh;
+    position: absolute;
+    /* bottom: -20vh;
     left: 12.3%;
-    height: 60vw;
-    width: 84%;
-    background-size: 90%;
+    height: 60vw; */
+    /* width: 84%; */
+    /* background-size: 90%; */
+    height: 100%;
+    width: 100%;
     z-index: 12;
     background-repeat: no-repeat;
     opacity: inherit;
