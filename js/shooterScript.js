@@ -1680,7 +1680,7 @@ function moveCurtain(action = 'open') {
                     alignTxt = 'left'
                 }
                 stl(newUpgrades, {
-                    'position': 'fixed',
+                    'position': 'absolute',
                     'textAlign': alignTxt,
                     'verticalAlign': 'baseline',
                     'top': '13.5%',
@@ -1689,7 +1689,6 @@ function moveCurtain(action = 'open') {
                     'fontFamily': 'noot',
                     'color': 'yellow',
                     'fontWeight': 'bolder',
-                    'position': 'fixed',
                     'width': '20%',
                     'height': '10%',
                     'fontSize': G.FontsiznewImprov + 'vmax',
@@ -2411,23 +2410,23 @@ function moveCurtain(action = 'open') {
             let wood = Id("woodsign");
             deleteChildren(wood);
             const file = "url('data/levelUp/bonus"
-            const ratio = 11
-            let morex = 3
+            const ratio = 12
+
             let bnsNum = 0;
             for (x = 1; x <= 4; x++) {
                 for (y = 3; y >= 1; y--) {
                     let morex = 3;
-                    let moresize = 0;
+                    let moresize = 1;
                     if (x >= 4) {
                         morex = 4;
-                        moresize = 3
+                        moresize += 3
                     }
 
                     bnsNum = (x * 10) + y;
                     if (bnsNum == 33 || bnsNum == 43) { continue }
                     let bonus = document.createElement('div');
                     bonus.id = 'bonus' + bnsNum
-                    let dx = (x * (ratio + morex)) + 10;
+                    let dx = (x * (ratio + morex)) + 2;
                     let dy = (y * ratio) + 12;
                     let isEng = '';
                     if (G.EN) { isEng = "EN" }
@@ -2444,7 +2443,7 @@ function moveCurtain(action = 'open') {
                         'boxShadow': '0.2vmax 0.3vmax 1px 1px rgba(63,107,169, 0.7)',
 
                         'borderRadius': "7px",
-                        "backgroundSize": "100%",
+                        "backgroundSize": "100% 100%",
 
                         "backgroundRepeat": "no-repeat",
                         'opacity': '1',
@@ -2700,7 +2699,7 @@ function moveCurtain(action = 'open') {
 
             // })
             // stl(Formtext, iStyle('text'), { 'textAlign': 'center', })
-            stl(input, styleObj);
+            // stl(input, styleObj);
             // stl(submit, styleObj);
             // stl(clear, styleObj)
             form.appendChild(Formtext);
@@ -2773,7 +2772,7 @@ function moveCurtain(action = 'open') {
         }
 
         function drawTargetIndex() {
-            const tSize = 5;
+            const tSize = 6;
 
             function placeTarget(type, num, x, y) {
                 let targetscontainer = Id("targetscontainer")
@@ -2794,8 +2793,8 @@ function moveCurtain(action = 'open') {
                     'left': x + '%',
                     'bottom': (y + "%"),
                     'overflow': 'hidden',
-                    'height': (tSize + "%"),
-                    'width': ((tSize * widthRatio) + "%"), //curren set proper width ratio
+                    'height': "8%",
+                    'width': "8%", //curren set proper width ratio
                     "backgroundSize": "100%",
                     'backgroundColor': ' rgba(254,254,254,0.25)',
                     'borderRadius': '15px',
@@ -2811,15 +2810,15 @@ function moveCurtain(action = 'open') {
             woodsign = Id('woodsign');
             const targetPerLine = 8
             let lines = Math.ceil(G.numOffoundSigns / targetPerLine)
-            let y1 = 70;
-            let yAdd = 10;
+            let y1 = 60;
+            let yAdd = 13;
             for (y = 1; y <= lines; y++) {
-                yAdd -= 12;
+                yAdd -= 13;
                 for (Prei = 1; Prei <= targetPerLine; Prei++) {
                     if (y == lines && Prei > (G.numOffoundSigns % targetPerLine)) { continue }
                     i = Prei + (targetPerLine * (y - 1))
-                    placeTarget('target', i, (Prei + 1) * (tSize * 1.5), y1 + yAdd)
-                    placeTarget('sign', i, (Prei + 1) * (tSize * 1.5), y1 + tSize + yAdd)
+                    placeTarget('target', i, (Prei + 1) * (tSize * 1.5) - 4, y1 + yAdd)
+                    placeTarget('sign', i, (Prei + 1) * (tSize * 1.5) - 4, y1 + tSize + yAdd)
                 }
             }
             drawReurnSingns();
@@ -3234,7 +3233,7 @@ function moveCurtain(action = 'open') {
                 'width': '30%',
                 'fontSize': G.Fontsiz2 + 'vmin',
                 'backgroundColor': 'rgba (240,240,240, 0.6)',
-                'zIndex': '20',
+                'zIndex': '11',
                 'opacity': '0',
 
 
