@@ -1226,14 +1226,14 @@ function moveCurtain(action = 'open') {
             }
             xleft += adding; xright += (adding * -1); advance++
         }
+        const isOpen = (action !== 'open');
         leftcurtain = Id('leftcurtain');
-        rightcurtain = Id('rightcurtain')
+        rightcurtain = Id('rightcurtain');
 
-        leftcurtainX = leftcurtain.style.left;
-        rightcurtainX = rightcurtain.style.left;
-        xleft = Pre2Num(leftcurtain.style.left);
-        xright = Pre2Num(rightcurtain.style.left);
-        rightcurtainX = Id('rightcurtain').style.left;
+        xleft = isOpen ? leftOpen : leftClose
+
+        xright = isOpen ? rightOpen : rightClose
+
         let dir = 1;
         if (action == 'open') { dir = -1 }
         var timer1 = setInterval(() => {
@@ -3023,7 +3023,7 @@ function moveCurtain(action = 'open') {
 
                     let r = 250;
                     let b = 20;
-                    scale += 0.02;
+                    scale += 0.01;
                     if (scale > maxSize) { scale = maxSize }
                     let endbutton = Id('endbutton')
                     if (!endbutton) { return };
@@ -3054,30 +3054,30 @@ function moveCurtain(action = 'open') {
                 var endbuttonBg = document.createElement('div');
                 endbuttonBg.id = 'endbuttonBg';
             }
-            stl(endbutton, iStyle('text'), {
-                'position': 'fixed',
-                'left': '10%',
-                'top': '45%',
-                'height': '40%',
-                'width': '50%',
-                'fontSize': G.Fontsiz2 + 'vmin',
-                'backgroundColor': 'rgba (240,240,240, 0.6)',
-                'zIndex': '20',
-                'fontFamily': 'noot',
-            })
-            stl(endbuttonBg, iStyle('text'), {
-                'position': 'fixed',
-                'left': '10%',
-                'top': '45%',
-                'height': '40%',
-                'width': '50%',
-                'fontSize': G.Fontsiz2 + 'vmin',
-                'fontFamily': 'noot',
-                'backgroundColor': 'rgba (240,240,240, 0.6)',
-                'zIndex': '10',
-                'textShadow': '-12px 8px 40px rgba(254,254,254,1), 9px 8px 40px rgba(254,254,254,1), 9px -10px 40px rgba(254,254,254,1)',
+            // stl(endbutton, iStyle('text'), {
+            //     'position': 'fixed',
+            //     'left': '10%',
+            //     'top': '45%',
+            //     'height': '40%',
+            //     'width': '50%',
+            //     'fontSize': G.Fontsiz2 + 'vmin',
+            //     'backgroundColor': 'rgba (240,240,240, 0.6)',
+            //     'zIndex': '20',
+            //     'fontFamily': 'noot',
+            // })
+            // stl(endbuttonBg, iStyle('text'), {
+            //     'position': 'fixed',
+            //     'left': '10%',
+            //     'top': '45%',
+            //     'height': '40%',
+            //     'width': '50%',
+            //     'fontSize': G.Fontsiz2 + 'vmin',
+            //     'fontFamily': 'noot',
+            //     'backgroundColor': 'rgba (240,240,240, 0.6)',
+            //     'zIndex': '10',
+            //     'textShadow': '-12px 8px 40px rgba(254,254,254,1), 9px 8px 40px rgba(254,254,254,1), 9px -10px 40px rgba(254,254,254,1)',
 
-            })
+            // })
 
             let finishText = "&nbsp" + G.TXT.youFinishedLevel + "&nbsp&nbsp&nbsp&nbsp" + G.upgrade.playerLevel + " &nbsp" + "!"
 
