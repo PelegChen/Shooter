@@ -1657,6 +1657,7 @@ function moveCurtain(action = 'open') {
                 let c2 = 200;
                 let c3 = 100;
                 let newUpgrades = Id('newUpgrades')
+                if (!newUpgrades) return;
                 let theColor = 'rgba(' + c + ',' + c2 + ',' + c3 + ')';
                 newUpgrades.style.color = theColor
                 c += (ad * 7);
@@ -1672,6 +1673,7 @@ function moveCurtain(action = 'open') {
 
             if (!Id("newUpgrades")) {
                 let newUpgrades = document.createElement('div');
+
                 newUpgrades.id = "newUpgrades";
                 let textDir = 'rtl';
                 let alignTxt = 'right';
@@ -1679,27 +1681,32 @@ function moveCurtain(action = 'open') {
                     textDir = 'ltr';
                     alignTxt = 'left'
                 }
-                stl(newUpgrades, {
-                    'position': 'absolute',
-                    'textAlign': alignTxt,
-                    'verticalAlign': 'baseline',
-                    'top': '13.5%',
-                    'right': '12.7%',
-                    "zIndex": '6',
-                    'fontFamily': 'noot',
-                    'color': 'yellow',
-                    'fontWeight': 'bolder',
-                    'width': '20%',
-                    'height': '10%',
-                    'fontSize': G.FontsiznewImprov + 'vmax',
-                    'fontSize': G.FontsiznewImprov + 'vmin',
-                    'textShadow': '0.5vw 0.5vh 1px black,-1px -1px 1px black,-1px 1px 1px black, 1px -1px 1px black, 9px 8px 0px rgba(0,0,0,0.15)'
+                // stl(newUpgrades, {
+                //     'position': 'absolute',
+                //     'textAlign': alignTxt,
+                //     'verticalAlign': 'baseline',
+                //     'top': '13.5%',
+                //     'right': '12.7%',
+                //     "zIndex": '6',
+                //     'fontFamily': 'noot',
+                //     'color': 'yellow',
+                //     'fontWeight': 'bolder',
+                //     'width': '20%',
+                //     'height': '10%',
+                //     'fontSize': G.FontsiznewImprov + 'vmax',
+                //     'fontSize': G.FontsiznewImprov + 'vmin',
+                //     'textShadow': '0.5vw 0.5vh 1px black,-1px -1px 1px black,-1px 1px 1px black, 1px -1px 1px black, 9px 8px 0px rgba(0,0,0,0.15)'
 
-                })
+                // })
 
                 newUpgrades.innerHTML = G.TXT.youGainedRank;
-                newUpgrades.addEventListener('click', () => { if (!G.ispause) { togglePause(true) } })
-                Id('hud').appendChild(newUpgrades);
+                newUpgrades.addEventListener('click', () => {
+                    if (!G.ispause) {
+                        togglePause(true);
+                        newUpgrades.remove();
+                    }
+                })
+                Id('buttonsUI').appendChild(newUpgrades);
                 sizer();
 
 
