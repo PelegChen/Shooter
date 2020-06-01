@@ -567,6 +567,7 @@ function buildMedia() {
             G.word[x].sign = new Image();
             G.word[x].sign.id = "sign" + x;
             let signUrl = "signs/sign (" + x + ").png";
+            G.word[x].sign.classList.add("contentsign");
             G.loadImg[x].sign = G.WasNotloadedYet;
             G.word[x].sign.onload = function(event) {
                 SetLoadValue(event, G.Wasloaded);
@@ -2042,16 +2043,16 @@ function moveCurtain(action = 'open') {
             }
         }
         lightsign.appendChild(sign)
-        stl(sign, {
-            'position': 'relative',
-            "top": "15%",
-            "left": "11%",
-            'height': "60%",
-            'width': 78 + "%",
-            "backgroundSize": "100%",
-            "zIndex": "13",
-            "backgroundRepeat": "no-repeat",
-        });
+            // stl(sign, {
+            //     'position': 'relative',
+            //     "top": "15%",
+            //     "left": "11%",
+            //     'height': "60%",
+            //     'width': 78 + "%",
+            //     "backgroundSize": "100%",
+            //     "zIndex": "13",
+            //     "backgroundRepeat": "no-repeat",
+            // });
         G.currentWord = sign.id;
         setTimeout(() => { playSound(G.sound.voice[rndSign]) }, 400)
 
@@ -2688,20 +2689,20 @@ function moveCurtain(action = 'open') {
             clear.setAttribute('type', "button");
             clear.setAttribute('value', G.TXT.beginNewGame);
             clear.addEventListener('click', () => { submitF('clear') })
+            form.classList.add("saveform")
+                // stl(form, {
+                //     'position': 'absolute',
+                //     'top': '20%',
+                //     'left': '15%',
+                //     'width': '60%',
+                //     'display': 'inline-block',
+                //     'textAlign': 'center'
 
-            stl(form, {
-                'position': 'absolute',
-                'top': '20%',
-                'left': '15%',
-                'width': '60%',
-                'display': 'inline-block',
-                'textAlign': 'center'
-
-            })
-            stl(Formtext, iStyle('text'), { 'textAlign': 'center', })
+            // })
+            // stl(Formtext, iStyle('text'), { 'textAlign': 'center', })
             stl(input, styleObj);
-            stl(submit, styleObj);
-            stl(clear, styleObj)
+            // stl(submit, styleObj);
+            // stl(clear, styleObj)
             form.appendChild(Formtext);
             form.appendChild(input);
             form.appendChild(br1);
@@ -2747,22 +2748,22 @@ function moveCurtain(action = 'open') {
                 let wood = Id("woodsign");
                 let back2menu = document.createElement('div');
                 back2menu.id = 'back2menu';
-                stl(back2menu, {
-                    'position': 'absolute',
-                    'right': '36%',
-                    'top': "56%",
-                    'overflow': 'hidden',
-                    'height': (4 + "%"),
-                    'width': (4 + "%"),
-                    'background': "url('data/arrow.png')",
-                    'backgroundColor': 'rgba(253,253,253,0.2)',
-                    'borderRadius': "7px",
-                    "backgroundSize": "100%",
-                    //'transform': 'rotate(80deg)',
-                    "backgroundRepeat": "no-repeat",
-                    'opacity': '1',
-                    "zIndex": "9"
-                })
+                // stl(back2menu, {
+                //     'position': 'absolute',
+                //     'right': '36%',
+                //     'top': "56%",
+                //     'overflow': 'hidden',
+                //     'height': (4 + "%"),
+                //     'width': (4 + "%"),
+                //     'background': "url('data/arrow.png')",
+                //     'backgroundColor': 'rgba(253,253,253,0.2)',
+                //     'borderRadius': "7px",
+                //     "backgroundSize": "100%",
+                //     //'transform': 'rotate(80deg)',
+                //     "backgroundRepeat": "no-repeat",
+                //     'opacity': '1',
+                //     "zIndex": "9"
+                // })
                 mOverEffect(back2menu, 1.5, 10);
                 wood.appendChild(back2menu);
 
@@ -2907,16 +2908,16 @@ function moveCurtain(action = 'open') {
                 if (G.isPlaying && !G.gameType.draw) {
                     let tarNum = (Number(G.currentWord.replace("sign", "")))
                     let sign = G.word[tarNum].sign;
-                    stl(sign, {
-                        'position': 'absolute',
-                        "top": "15%",
-                        "left": "11%",
-                        'height': "60%",
-                        'width': 78 + "%",
-                        "backgroundSize": "100%",
-                        "zIndex": "13",
-                        "backgroundRepeat": "no-repeat",
-                    });
+                    // stl(sign, {
+                    //     'position': 'absolute',
+                    //     "top": "15%",
+                    //     "left": "11%",
+                    //     'height': "60%",
+                    //     'width': 78 + "%",
+                    //     "backgroundSize": "100%",
+                    //     "zIndex": "13",
+                    //     "backgroundRepeat": "no-repeat",
+                    // });
                     // Id('lightsign').appendChild(sign)
                 }
                 ws = Id('woodsigncontainer')
@@ -2977,6 +2978,8 @@ function moveCurtain(action = 'open') {
     }
 
     function newLevel(finish = false, timeup = false) {
+
+
         function getTypeOflevel(playerLv) {
             const levelMechanics = 4
             let leveladder = 0;
@@ -3409,5 +3412,7 @@ function moveCurtain(action = 'open') {
     buildMedia();
     G.isGun2 = false;
     if (G.upgrade.twoGunsUpgrade[3]) { G.isGun2 = true }
+
+
     visuaGamelLoader(false)
     setTimeout(function() { checkLoadstatus(); }, 1000); //need this to get the randomizer to work
