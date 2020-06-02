@@ -1,5 +1,9 @@
 /*css styleSheet.css*/
 
+html {
+    position: fixed;
+}
+
 .console-text {
     font-family: noot;
     color: white;
@@ -111,17 +115,17 @@
 }
 
 #wood {
-    position: fixed;
+    position: absolute;
     top: 16%;
-    right: 12%;
-    left: 12%;
+    left: 0%;
     height: 60%;
-    width: 74%;
-    background: url(../data/wood.jpg) 0% 0% / 100%;
+    width: 100%;
+    background: url(../data/wood.jpg);
+    background-size: 100%;
     background-repeat: repeat-y;
     overflow: hidden;
     filter: blur(1px);
-    z-index: 3;
+    z-index: -1;
 }
 
 #pageBody {
@@ -300,5 +304,9 @@
     #woodsigncontainer {
         top: 21vw;
         height: 72vw;
+    }
+    #leftcurtain,
+    #rightcurtain {
+        top: 17%;
     }
 }
