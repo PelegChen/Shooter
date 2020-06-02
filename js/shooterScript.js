@@ -2209,7 +2209,7 @@ function moveCurtain(action = 'open') {
         function timedstart() {
             gunHidesOrComesUp(1, 1, 'up');
             if (G.isGun2) { gunHidesOrComesUp(1, 2, 'up') }
-            for (i = 1; i <= 3; i++) { addTarget(i * 25, 55, 1); }
+            for (i = 1; i <= 3; i++) { addTarget((i * 25) - 5, 55, 1); }
             setWord('static');
         }
 
