@@ -308,7 +308,8 @@ html {
     #leftcurtain,
     #rightcurtain {
         top: 17%;
-        height: 60vw;
+        height: 52vw;
+        visibility: hidden;
     }
     .gunhole {
         visibility: hidden;
