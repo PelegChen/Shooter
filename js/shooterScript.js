@@ -397,7 +397,7 @@ function setTXT() {
             save: " Save ",
             beginNewGame: " Begin a new game ",
             youFinishedLevel: " You've finish level ",
-            timeIsUp: " Time is up ",
+            timeIsUp: "Your time is up... Try Again ",
             IAmNot: " I am not ",
             tryToShootTargetsByWords: " Shoot the targets according to the sign  ",
             quickDraw: " Quick draw! ",
@@ -3023,7 +3023,7 @@ function moveCurtain(action = 'open') {
 
                     let r = 250;
                     let b = 20;
-                    scale += 0.01;
+                    scale += 0.02;
                     if (scale > maxSize) { scale = maxSize }
                     let endbutton = Id('endbutton')
                     if (!endbutton) { return };

@@ -14,6 +14,7 @@
 
 #endbutton,
 #endbuttonBg {
+    text-align: center;
     font-size: 7vmin;
     font-family: noot;
     text-align: left;
@@ -82,7 +83,7 @@
     left: 30%;
     top: 30%;
     height: 20%;
-    width: 30%;
+    width: 50%;
     opacity: 1;
     z-index: 11;
 }
