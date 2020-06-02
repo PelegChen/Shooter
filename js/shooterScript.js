@@ -650,7 +650,7 @@ function buildMedia() {
         guncontainer.id = "guncontainer" + theId;
 
         stl(guncontainer, {
-            'position': 'absolute',
+            'position': 'fixed',
             'bottom': "-5%",
             'right': guncontainer_right,
             "left": guncontainer_left,
@@ -1036,8 +1036,8 @@ function buildMedia() {
         "backgroundRepeat": "no-repeat",
     });
     galleryContainer.appendChild(bottomgallery);
-    galleryContainer.appendChild(leftcurtain);
     galleryContainer.appendChild(rightcurtain);
+    galleryContainer.appendChild(leftcurtain);
     galleryContainer.appendChild(leftpole);
     galleryContainer.appendChild(rightpole);
 

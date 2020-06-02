@@ -191,12 +191,12 @@ html {
     top: 17%;
     height: 60vh;
     width: 70%;
-    overflow: hidden;
     z-index: 10;
 }
 
 #leftcurtain {
     left: -10%;
+    transform: scaleX(1);
 }
 
 #rightcurtain {
@@ -308,5 +308,9 @@ html {
     #leftcurtain,
     #rightcurtain {
         top: 17%;
+        height: 60vw;
+    }
+    .gunhole {
+        visibility: hidden;
     }
 }
