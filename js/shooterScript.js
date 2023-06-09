@@ -1,6 +1,9 @@
 // Copyright (c) 2017-2019 Chen Peleg version 1.3 10/2019
 
 // declaring globals
+/**
+ * @type {any}
+ */
 var G;
 function setGlobal() {
   if (typeof G == "undefined") {
@@ -586,8 +589,8 @@ function buildMedia() {
 
   function bulildwords() {
     function SetLoadValue(TheEvent, valueOFload) {
-      console.log("setLoadValue", TheEvent);
-      let TheId = TheEvent.path["0"].id;
+      console.log("setLoadValue", TheEvent, TheEvent.composedPath());
+      let TheId = TheEvent.composedPath()["0"].id;
       if (TheId.indexOf("sign") >= 0) {
         TheId = TheId.replace(/\D/g, "");
         TheId = Number(TheId);
