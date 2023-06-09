@@ -1,6 +1,7 @@
 // Copyright (c) 2017-2019 Chen Peleg version 1.3 10/2019
 
 // declaring globals
+var G;
 function setGlobal() {
   if (typeof G == "undefined") {
     G = {};
