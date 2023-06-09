@@ -684,7 +684,7 @@ function buildMedia() {
     let gunposition = G.gunrightLimit;
     if (Isgun2) {
       theId = "2";
-      guncontainer_sideposition = "20%";
+      var guncontainer_sideposition = "20%";
       direction = -1;
       guncontainer_left = "-10%";
       guncontainer_right = "70%";
@@ -704,7 +704,7 @@ function buildMedia() {
       cursor: "url('data/crosshair.png'), auto",
     });
     var pagecontainer = Id("pagecontainer");
-    pagecontainer.appendChild(guncontainer);
+    pagecontainer?.appendChild(guncontainer);
     var gun = document.createElement("div");
     gun.id = "gun" + theId;
     stl(gun, {
